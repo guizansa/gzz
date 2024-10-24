@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanchonete CaioX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        select {
+            width: 60px;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        img {
+            width: 50px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="comprovante.php" method="POST">
+        <div class="menu">
+            <h1>Lanches</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lanches</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="lanches[]" value="X-Murilo" checked> X-Murilo</td>
+                        <td>
+                            <select name="quantidade_x_murilo">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 8,30</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="lanches[]" value="Silveira Quente"> Silveira Quente</td>
+                        <td>
+                            <select name="quantidade_silveira_quente">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 7,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="lanches[]" value="Brisola e Igor salada"> Brisola e Igor salada
+                        </td>
+                        <td>
+                            <select name="quantidade_brisola_igor">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 8,90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="menu">
+            <h1>Bebidas</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bebidas</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="bebidas[]" value="Suco de Laranja" checked> Suco de Laranja
+                        </td>
+                        <td>
+                            <select name="quantidade_suco_laranja">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 7,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="bebidas[]" value="Coca"> Coca</td>
+                        <td>
+                            <select name="quantidade_coca">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 5,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="bebidas[]" value="Água"> Água</td>
+                        <td>
+                            <select name="quantidade_agua">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 2,90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="menu">
+            <h1>Porções</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Porção</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="porcoes[]" value="Batata Frita" checked> Batata Frita</td>
+                        <td>
+                            <select name="quantidade_batata_frita">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 20,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="porcoes[]" value="Iscas de Frango"> Iscas de Frango</td>
+                        <td>
+                            <select name="quantidade_iscas_frango">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 23,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="porcoes[]" value="Tilápia"> Tilápia</td>
+                        <td>
+                            <select name="quantidade_tilapia">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 23,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="menu">
+            <h1>Doces</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Doce</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="doces[]" value="Bala de Cocô" checked> Bala de Cocô</td>
+                        <td>
+                            <select name="quantidade_bala_coco">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 4,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="doces[]" value="Sorvete"> Sorvete</td>
+                        <td>
+                            <select name="quantidade_sorvete">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 6,00</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="doces[]" value="Açaí"> Açaí</td>
+                        <td>
+                            <select name="quantidade_acai">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                        <td>R$ 14,90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <input type="submit" value="Enviar Pedido">
+    </form>
+
+</body>
+
+</html>
